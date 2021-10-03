@@ -1,0 +1,134 @@
+{% extends "estados/base.html" %} {% block content %} {% load static %}
+
+<div class="container">
+  <div class="centrado">
+    <h1><b>{{name}}</b></h1>
+    <br />
+    <img
+      src="{{statecoat.image_url}}"
+      style="max-width: 250px"
+      title="© Wikimedia Commons | {{statecoat.title}} | User:{{statecoat.author}} | {{statecoat.license}}"
+      class="card-img"
+      alt="..."
+    />
+    <br /><br id="refPag" />
+    <h2>Filtrar tours:</h2>
+<button
+      type="button"
+      id="walk"
+      onclick="walk()"
+      class="btn btn-outline-success filter-tour"
+      data-toggle="button"
+      aria-pressed="false"
+      autocomplete="off"
+    ><i class="fas fa-walking"></i> Tour en pie</button>
+    <button
+      type="button"
+      id="car"
+      onclick="car()"
+      class="btn btn-outline-primary filter-tour"
+      data-toggle="button"
+      aria-pressed="false"
+      autocomplete="off"
+    ><i class="fas fa-car"></i> Tour en carro</button>
+    <button
+      type="button"
+      id="air"
+      onclick="air()"
+      class="btn btn-outline-secondary filter-tour"
+      data-toggle="button"
+      aria-pressed="false"
+      autocomplete="off"
+    ><i class="fas fa-plane"></i> Tour en aire</button>
+    <button
+      type="button"
+      id="event"
+      onclick="events()"
+      class="btn btn-outline-danger filter-tour"
+      data-toggle="button"
+      aria-pressed="false"
+      autocomplete="off"
+    ><i class="fas fa-glass-cheers"></i> Eventos</button>
+    <button
+      type="button"
+      id="retro"
+      onclick="retro()"
+      class="btn btn-outline-warning filter-tour"
+      data-toggle="button"
+      aria-pressed="false"
+      autocomplete="off"
+    ><i class="fas fa-camera-retro"></i> Retro</button>
+&emsp;
+    <button type="button" onclick="buscarQuery()" class="btn btn-dark"><i class="fas fa-search"></i> Buscar</button>
+  </div>
+
+
+
+<form action="">
+  <div class="input-group">
+  <input type="text" name='q' class="form-control form-control-lg" placeholder="Search" />
+  <div class="input-group-append">
+  <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i> Buscar</button>
+  </div>
+  </div>
+</form>
+
+  <ul class="list">
+    {% for place in estado.object_list %}
+    <li>
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{% if place.image_url %}{{place.image_url}}{% else %}{% static 'estados/walking.jpg' %}{% endif %}" class="card-img"/>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{place.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{place.city_tag}}</h6>
+            <p class="card-text">
+              {{place.description}}
+            </p>
+            {% if place.category_tag == "Tour en pie"%}<span class="badge badge-success categoryTAG"> Tour en pie</span>{% endif %}
+            {% if place.category_tag == "Tour en carro"%}<span class="badge badge-primary categoryTAG"> Tour en carro</span>{% endif %}
+            {% if place.category_tag == "Tour en aire"%}<span class="badge badge-secondary categoryTAG"> Tour en aire</span>{% endif %}
+            {% if place.category_tag == "Eventos"%}<span class="badge badge-danger categoryTAG"> Eventos</span>{% endif %}
+            {% if place.category_tag == "Retro"%}<span class="badge badge-warning categoryTAG"> Retro</span>{% endif %}
+
+             <span class="badge badge-dark">{{place.tag1}}</span> <span class="badge badge-dark">{{place.tag2}}</span> {% if place.tag3 %}<span class="badge badge-dark">{{place.tag3}}</span>{% endif %} {% if place.tag4 %}<span class="badge badge-dark">{{place.tag4}}</span>{% endif %}
+            <br><br>
+            <button type="button" class="btn btn-outline-dark">
+               <i class="fas fa-play"></i> <b>Ver</b>
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    {% if estado.has_previous %}<li class="page-item"><a class="page-link" href="{{ request.path }}?page={{estado.previous_page_number}}">Anterior</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+    {% endif %}
+    {% for i in estado.paginator.page_range %}
+    {% if estado.number == i %}
+    <li class="page-item active"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if estado.has_next %}<li class="page-item"><a class="page-link" href="{{ request.path }}?page={{estado.next_page_number}}">Siguiente</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="#">Siguiente</a></li>
+    {% endif %}
+  </ul>
+</nav>
+<br>
+
+</div>
+
+</div>
+{% endblock %}

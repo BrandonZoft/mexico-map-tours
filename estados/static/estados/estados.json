@@ -1,0 +1,162 @@
+[
+    {
+      "state": "Aguascalientes",
+      "url": "aguascalientes",
+      "code": "AGS"
+    },
+    {
+      "state": "Baja California",
+      "url": "baja_california",
+      "code": "BCN"
+    },
+    {
+      "state": "Baja California Sur",
+      "url": "baja_california_sur",
+      "code": "BCS"
+    },
+    {
+      "state": "Campeche",
+      "url": "campeche",
+      "code": "CAM"
+    },
+    {
+      "state": "Chiapas",
+      "url": "chiapas",
+      "code": "CHP"
+    },
+    {
+      "state": "Chihuahua",
+      "url": "chihuahua",
+      "code": "CHI"
+    },
+    {
+      "state": "Coahuila",
+      "url": "coahuila",
+      "code": "COA"
+    },
+    {
+      "state": "Colima",
+      "url": "colima",
+      "code": "COL"
+    },
+    {
+      "state": "Ciudad de México",
+      "url": "ciudad_de_mexico",
+      "code": "CMX"
+    },
+    {
+      "state": "Durango",
+      "url": "durango",
+      "code": "DUR"
+    },
+    {
+      "state": "Guanajuato",
+      "url": "guanajuato",
+      "code": "GTO"
+    },
+    {
+      "state": "Guerrero",
+      "url": "guerrero",
+      "code": "GRO"
+    },
+    {
+      "state": "Hidalgo",
+      "url": "hidalgo",
+      "code": "HGO"
+    },
+    {
+      "state": "Jalisco",
+      "url": "jalisco",
+      "code": "JAL"
+    },
+    {
+      "state": "Estado de México",
+      "url": "estado_de_mexico",
+      "code": "MEX"
+    },
+    {
+      "state": "Michoacán",
+      "url": "michoacan",
+      "code": "MIC"
+    },
+    {
+      "state": "Morelos",
+      "url": "morelos",
+      "code": "MOR"
+    },
+    {
+      "state": "Nayarit",
+      "url": "nayarit",
+      "code": "NAY"
+    },
+    {
+      "state": "Nuevo León",
+      "url": "nuevo_leon",
+      "code": "NLE"
+    },
+    {
+      "state": "Oaxaca",
+      "url": "oaxaca",
+      "code": "OAX"
+    },
+    {
+      "state": "Puebla",
+      "url": "puebla",
+      "code": "PUE"
+    },
+    {
+      "state": "Querétaro",
+      "url": "queretaro",
+      "code": "QRO"
+    },
+    {
+      "state": "Quintana Roo",
+      "url": "quintana_roo",
+      "code": "ROO"
+    },
+    {
+      "state": "San Luis Potosí",
+      "url": "san_luis_potosi",
+      "code": "SLP"
+    },
+    {
+      "state": "Sinaloa",
+      "url": "sinaloa",
+      "code": "SIN"
+    },
+    {
+      "state": "Sonora",
+      "url": "sonora",
+      "code": "SON"
+    },
+    {
+      "state": "Tabasco",
+      "url": "tabasco",
+      "code": "TAB"
+    },
+    {
+      "state": "Tamaulipas",
+      "url": "tamaulipas",
+      "code": "TAM"
+    },
+    {
+      "state": "Tlaxcala",
+      "url": "tlaxcala",
+      "code": "TLA"
+    },
+    {
+      "state": "Veracruz",
+      "url": "veracruz",
+      "code": "VER"
+    },
+    {
+      "state": "Yucatán",
+      "url": "yucatan",
+      "code": "YUC"
+    },
+    {
+      "state": "Zacatecas",
+      "url": "zacatecas",
+      "code": "ZAC"
+    }
+  ]

@@ -1,0 +1,57 @@
+{% extends "estados/base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
+
+<div class="container">
+
+
+      <div class="toppitytop"></div>
+      <center class="toppitytop"><h1><b>{{video.title}}</b></h1></center>
+      <center>
+      <span class="badge badge-primary">{{video.city_tag}}</span>
+      <span class="badge badge-light">{{video.tag1}}</span>
+      <span class="badge badge-light">{{video.tag2}}</span>
+      {% if video.tag3 %}<span class="badge badge-light">{{video.tag3}}</span>{% endif %}
+      {% if video.tag4 %}<span class="badge badge-light">{{video.tag4}}</span>{% endif %}
+      <br><br>
+      </center>
+      <center><p>{{video.description}}</p></center>
+
+      <div
+        id="player"
+        data-plyr-provider="youtube"
+        data-plyr-embed-id="{{video.url}}"
+        allow="autoplay"
+      ></div><br>
+      <center>
+        <button type="button" onclick="player.restart()" class="btn btn-outline-danger"><i class="fas fa-history"></i></button>
+      <button type="button" onclick="player.rewind(15)" class="btn btn-outline-danger"><i class="fas fa-angle-double-left"></i></button>
+      <button type="button" onclick="player.rewind(5)" class="btn btn-outline-danger"><i class="fas fa-angle-left"></i></button>
+      <button type="button" onclick="player.togglePlay()" class="btn btn-outline-danger"><i class="fas fa-play"></i> <i class="fas fa-pause"></i></button>
+      <button type="button" onclick="player.forward(5)" class="btn btn-outline-danger"><i class="fas fa-angle-right"></i></button>
+      <button type="button" onclick="player.forward(15)" class="btn btn-outline-danger"><i class="fas fa-angle-double-right"></i></button>
+      <button type="button" onclick="player.fullscreen.enter()" class="btn btn-outline-danger"><i class="fas fa-expand"></i></button>
+      <button type="button" onclick="location.href = '{{video.url}}'" class="btn btn-outline-primary"><i class="fab fa-youtube"> YouTube</i></button>
+    </center>
+    </div>
+    <br>
+
+    <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+    <script>
+      const player = new Plyr("#player", {
+        controls: [
+          "play-large",
+          "play",
+          "rewind",
+          "fast-forward",
+          "airplay",
+          "volume",
+          "mute",
+          "download",
+          "fullscreen",
+        ],
+      });
+      player.play();
+    </script>
+    <script src="index.js"></script>
+
+{% endblock %}
